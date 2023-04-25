@@ -5,7 +5,6 @@ const fs = require('fs');
 
 const generateMarkdown = require('./utils/generateMarkdown.js'); 
 
-const licenses = ['MIT', 'GPLv2', 'Apache', 'GPLv3','BSD 3-clause']
 
 // TODO: Create an array of questions for user input
 const questions = [

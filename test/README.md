@@ -1,9 +1,9 @@
-# l 
+#  
    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
 
   ## Description
    
-  p 
+   
 
   ## Table of Contents
   *[Installation](#installation)
@@ -15,11 +15,11 @@
 
   ## Installation
  
-  yo
+  
 
   ## Usage
   
-  t
+  
 
   ## License 
 
@@ -28,17 +28,17 @@
 
   ## Contributing
   
-  g 
+   
 
   ## Tests
   
-  k
+  
 
   ## Questions 
 
   If you have any questions please feel free to contact me here  
 
-  GitHub Username: 2
-  Email: 3
+  GitHub Username: 
+  Email: 
 
 
