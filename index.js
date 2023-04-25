@@ -46,7 +46,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Enter any testig instructions you would like to provide :',
+        message: 'Enter any testing instructions you would like to provide :',
         name: 'tests',  
     },
     {
@@ -75,7 +75,7 @@ function writeToFile(fileName, data) {
 function init() { 
     inquirer.prompt(questions).then((data)=>{
         console.log(JSON.stringify(data, null, " "));
-        data.getLicense = getLicense(data.License);
+      // license = license(data.license);
         writeToFile('./test/README.md', data);
     });
 }

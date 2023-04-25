@@ -47,11 +47,64 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (value === 'MIT'){
+    return `${renderLicenseBadge('MIT')} ${renderLicenseLink('MIT')}`;
+  }
+  else if (value === 'GPLv2'){
+    return `${renderLicenseBadge('GPLv2')} ${renderLicenseLink('GPLv2')}`;
+  }
+  else if (value === 'Apache'){
+    return `${renderLicenseBadge('Apache')} ${renderLicenseLink('Apache')}`;
+  }
+  else if (value === 'GPLv3'){
+    return `${renderLicenseBadge('GPLv3')} ${renderLicenseLink('GPLv3')}`;
+  }
+  else if (value === 'BSD 3-clause'){
+    return `${renderLicenseBadge('BSD 3-clause')} ${renderLicenseLink('BSD 3-clause')}`;
+  }
+  else{
+    return "";
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.title} 
+   ${data.license}
+
+  ## Description
+   ${data.description} 
+
+  ## Table of Contents
+  *[Installation](#installation)
+  *[Usage](#usage)
+  *[License](#license)
+  *[Contributing](#contributing)
+  *[Tests](#tests)
+  *[Questions](#questions)
+
+  ## Installation
+  ${data.installation}
+
+  ## Usage
+  ${data.usage}
+
+  ## License 
+  ${data.license}
+
+  ## Contributing
+  ${data.contributing} 
+
+  ## Tests
+  ${data.tests}
+
+  ## Questions 
+
+  If you have any questions please feel free to contact me here:  
+  GitHub Username: ${data.userName}
+  Email: ${data.Email}
+
 
 `;
 }
