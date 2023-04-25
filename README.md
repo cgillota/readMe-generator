@@ -3,7 +3,9 @@
 
   ## Description
    
-  It is a quick commandline app that generates a README.MD file. I'm even using it right now to make this readme! I used this repo for my badges and links: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba 
+  It is a quick commandline app that generates a README.MD file. I'm even using it right now to make this readme! I used this repo for my badges and links: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba  
+  
+  Link for video recording: https://drive.google.com/file/d/1FBvgBteQSJDy_mdXZJxx7uInZChE8fRa/view 
 
   ## Table of Contents
   *[Installation](#installation)
