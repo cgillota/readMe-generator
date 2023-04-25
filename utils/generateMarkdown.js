@@ -1,67 +1,36 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (value === 'MIT'){
-    return"[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]";
+  const badge = { 
+    MIT: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]",
+    GPLv2: "[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)]",
+    Apache: "[![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]",
+    GPLv3: "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]",
+    BSD3Clause:  "[![License: BSD3Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]"
   }
-  else if (value === 'GPLv2'){
-    return "[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)]";
-  }
-  else if (value === 'Apache'){
-    return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]";
-  } 
-  else if (value === 'GPLv3'){
-    return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]";
+  return badge[license] 
+}
 
-  } 
-  else if (value === 'BSD 3-clause'){
-    return "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]";
-  }
-  else {
-    return " ";
-  }
-};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (value === 'MIT'){
-    return "(https://opensource.org/licenses/MIT)";
+  const link = {
+    MIT: '[MIT](https://opensource.org/licenses/MIT)',
+    GPLv2: '[GPLv2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)',
+    Apache: '[Apache](https://opensource.org/licenses/Apache-2.0)', 
+    GPLv3: '[GPLv3](https://www.gnu.org/licenses/gpl-3.0)',
+    BSD3Clause: '[BSD3Clause](https://opensource.org/licenses/BSD-3-Clause)'
   }
-  else if (value === 'GPLv2'){
-    return"(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)";
-  } 
-  else if (value === 'Apache'){
-    return "(https://opensource.org/licenses/Apache-2.0)";
-  }
-  else if(value === 'GPLv3'){
-    return "(https://www.gnu.org/licenses/gpl-3.0)";
-  }
-  else if (value === 'BSD 3-clause'){
-    return "(https://opensource.org/licenses/BSD-3-Clause)";
-  }
-  else {
-  return "";
-  }
+  return link[license]
 };
+
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (value === 'MIT'){
-    return `${renderLicenseBadge('MIT')} ${renderLicenseLink('MIT')}`;
-  }
-  else if (value === 'GPLv2'){
-    return `${renderLicenseBadge('GPLv2')} ${renderLicenseLink('GPLv2')}`;
-  }
-  else if (value === 'Apache'){
-    return `${renderLicenseBadge('Apache')} ${renderLicenseLink('Apache')}`;
-  }
-  else if (value === 'GPLv3'){
-    return `${renderLicenseBadge('GPLv3')} ${renderLicenseLink('GPLv3')}`;
-  }
-  else if (value === 'BSD 3-clause'){
-    return `${renderLicenseBadge('BSD 3-clause')} ${renderLicenseLink('BSD 3-clause')}`;
+  if (license){
+    return `licensed under  ${this.renderLicenseLink(data.license)} license`
   }
   else{
     return "";
@@ -71,10 +40,11 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title} 
-   ${data.license}
+   ${renderLicenseBadge(data.license)}
 
   ## Description
-   ${data.description} 
+   
+  ${data.description} 
 
   ## Table of Contents
   *[Installation](#installation)
@@ -85,23 +55,30 @@ function generateMarkdown(data) {
   *[Questions](#questions)
 
   ## Installation
+ 
   ${data.installation}
 
   ## Usage
+  
   ${data.usage}
 
   ## License 
-  ${data.license}
+
+  Please see the link below for detailed information on this license
+  ${renderLicenseLink(data.license)}
 
   ## Contributing
+  
   ${data.contributing} 
 
   ## Tests
+  
   ${data.tests}
 
   ## Questions 
 
-  If you have any questions please feel free to contact me here:  
+  If you have any questions please feel free to contact me here  
+
   GitHub Username: ${data.userName}
   Email: ${data.Email}
 

@@ -3,7 +3,9 @@ const inquirer = require('inquirer');
 
 const fs = require('fs'); 
 
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js'); 
+
+const licenses = ['MIT', 'GPLv2', 'Apache', 'GPLv3','BSD 3-clause']
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -67,6 +69,9 @@ function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), function (err){
         if (err){ 
             return console.log(err);
+        } 
+        else{ 
+            console.log("Succesfully created file!")
         }
     });
 }
@@ -74,8 +79,6 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() { 
     inquirer.prompt(questions).then((data)=>{
-        console.log(JSON.stringify(data, null, " "));
-      // license = license(data.license);
         writeToFile('./test/README.md', data);
     });
 }
